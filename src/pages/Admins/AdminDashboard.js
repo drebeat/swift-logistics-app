@@ -16,11 +16,11 @@ const AdminDashboard = () => {
 
       <AdminHeader />
       <div
-        className="min-h-screen bg-pink-50"
+        className="min-h-screen bg-pink-50 overflow-y-auto"
         style={{ fontFamily: "Schibsted Grotesk, sans-serif" }}
       >
         <div className="px-10">
-          <div className="text-fuchsia-700 text-[32px] font-bold py-8">
+          <div className="text-fuchsia-700 text-md md:text-xl lg:text-2xl font-bold py-8">
             Welcome back
           </div>
           <div className="w-full flex gap-3"></div>

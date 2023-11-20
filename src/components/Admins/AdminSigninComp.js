@@ -17,7 +17,7 @@ const validationSchema = yup.object({
 });
 
 const AdminSigninComp = () => {
-  const [showPassword, setShowPassword] = useState("false");
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -92,6 +92,8 @@ const AdminSigninComp = () => {
 
   const [PasswordInputType, ToggleIcon] = usePasswordToggle();
 
+  // console.log(context);
+
   return (
     <div
       className="min-h-screen pb-6"
@@ -99,7 +101,14 @@ const AdminSigninComp = () => {
     >
       <LandingAdminNav />
       <div className="bg-white h-[600px] container mx-auto mt-4 drop-shadow-2xl py-4 flex flex-col justify-center items-center cursor-pointer">
-        <form className="flex justify-center items-center flex-col w-screen h-screen">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault(); // Prevent the default form submission
+            formik.handleSubmit(); // Trigger formik handleSubmit manually
+          }}
+          method="post"
+          className="flex justify-center items-center flex-col w-screen h-screen"
+        >
           <div className="px-10 py-4 rounded-xl shadow-md max-w-md">
             <div className="space-y-3">
               <h1 className="text-center text-2xl font-semibold text-gray-600">

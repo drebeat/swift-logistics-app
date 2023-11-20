@@ -104,6 +104,7 @@ const SignIn = () => {
             e.preventDefault(); // Prevent the default form submission
             formik.handleSubmit(); // Trigger formik handleSubmit manually
           }}
+          method="post"
           className="flex justify-center items-center flex-col w-screen h-screen"
         >
           <div className="px-10 py-4 rounded-xl shadow-md max-w-md">

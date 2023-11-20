@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "../api/axios";
 import useAuth from "./useAuth";
 
-const useRefreshToken = () => {
+const useAdminRefreshToken = () => {
   const navigate = useNavigate();
   const context = useAuth();
   const refreshToken = localStorage.getItem("refresh");
@@ -14,7 +14,7 @@ const useRefreshToken = () => {
         throw new Error("Refresh token not found");
       }
 
-      const response = await axios.post("/auth/users/verify/refresh", {
+      const response = await axios.post("/auth/admin/verify/refresh", {
         refreshToken: refreshToken,
       });
 
@@ -22,14 +22,14 @@ const useRefreshToken = () => {
         context?.setAuth((prev) => ({
           ...prev,
           accessToken: response?.data?.accessToken,
-          role: "user",
+          role: "superAdmin",
         }));
         return response?.data?.accessToken;
       }
     } catch (err) {
       console.error(err);
 
-      navigate("/user-login", {
+      navigate("/admin-login", {
         state: {
           prevURL: location.pathname,
         },
@@ -40,4 +40,4 @@ const useRefreshToken = () => {
   return refresh;
 };
 
-export default useRefreshToken;
+export default useAdminRefreshToken;

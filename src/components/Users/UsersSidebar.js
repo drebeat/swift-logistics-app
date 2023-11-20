@@ -21,9 +21,9 @@ const UsersSidebar = ({ page }) => {
 
   const LinkReset = "p-0";
   const currentPage =
-    "bg-fuchsia-800 text-white font-bold cursor-pointer py-2 px-4 flex items-center w-full border-none";
+    "bg-fuchsia-700 text-white font-bold cursor-pointer py-2 px-4 flex items-center w-full border-none justify-start items-center gap-3 mb-6";
   const regularPage =
-    "text-white font-bold cursor-pointer py-2 px-4 flex items-center w-full hover:bg-slate-50 hover:text-slate-700";
+    "text-white font-bold cursor-pointer py-2 px-4 flex items-center w-full hover:bg-slate-50 hover:text-slate-700 border-b-2 border-white border-opacity-5";
 
   const currentSubMenu = `text-white font-bold cursor-pointer py-2 pl-10 pr-4 flex items-center w-full border-none`;
   const regularSubMenu = `text-white font-bold cursor-pointer py-2 pl-10 pr-4 flex items-center w-full hover:bg-slate-50 hover:text-slate-700`;
@@ -31,19 +31,6 @@ const UsersSidebar = ({ page }) => {
   const [showSubMenuSetting, setShowSubMenuSetting] = useState(false);
   const [showSubMenuSettings, setShowSubMenuSettings] = useState(false);
   const { showSidebar } = useContext(SidebarContext);
-
-  // const signOut = () => {
-  //   axios.post(`/auth/users/logout`).catch((err) => {
-  //     console.error(err?.response);
-  //   });
-  //   setAuth({});
-  //   localStorage.removeItem("refresh");
-  //   navigate("/user-login", {
-  //     state: {
-  //       prevURL: location.pathname,
-  //     },
-  //   });
-  // };
 
   const openLogoutDialog = () => {
     setShowLogoutDialog(true);

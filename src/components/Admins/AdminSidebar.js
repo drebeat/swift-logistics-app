@@ -32,23 +32,22 @@ const AdminSidebar = ({ page }) => {
 
   return (
     <div
-      className={`lg:w-1/5 lg:translate-x-0 w-64 fixed inset-y-0 left-0 transform transition duration-200 shadow-2xl ease-in-out flex flex-col bg-fuchsia-950  text-white text-sm font-light py-6 z-50  ${
+      className={`lg:w-1/5 lg:translate-x-0 w-64 fixed inset-y-0 left-0 transform transition duration-200 shadow-2xl ease-in-out flex flex-col bg-fuchsia-950  text-white text-sm font-light py-6 z-50 overflow-y-auto  ${
         showSidebar
           ? "translate-x-0 shadow-lg"
           : "-translate-x-full shadow-none"
       }`}
       style={{ fontFamily: "Schibsted Grotesk, sans-serif" }}
     >
-      <div className="relative h-full flex flex-col justify-between">
+      <Link to="/" className={LinkReset}>
+        <div className="flex items-center px-2">
+          <img src={brand} alt="" className="w-28 h-auto" />
+        </div>
+      </Link>
+      <div className="relative h-full">
         <div className="py-6">
-          <Link to="/" className={LinkReset}>
-            <div className="flex items-center px-2">
-              <img src={brand} alt="" className="w-28" />
-            </div>
-          </Link>
-
-          <div className="flex flex-col mt-20 space-y-3">
-            <div className="overflow-y-auto">
+          <div className="flex flex-col mt-8 space-y-2">
+            <div className="">
               <Link to="/admin-dashboard" className="">
                 <span
                   className={page === "dashboard" ? currentPage : regularPage}

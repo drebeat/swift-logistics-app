@@ -2,7 +2,6 @@ import React from "react";
 import SidebarContextProvider from "../../contexts/SidebarContext";
 import AdminSidebar from "./AdminSidebar";
 
-
 const AdminLayout = ({ children, page }) => {
   return (
     <SidebarContextProvider>

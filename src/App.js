@@ -58,39 +58,33 @@ function App() {
       <Route path="/admin-login" element={<AdminSignin />} />
 
       {/**User routes */}
-      <Route element={<PersistLogin allowedRole={["user"]} />}>
-        <Route element={<RequireUser allowedRole={["user"]} />}>
-          <Route path="/users-dashboard" element={<UsersDashboard />} />
-          <Route path="/settings/edit-profile" element={<EditProfile />} />
-          <Route
-            path="/settings/promotional-tips"
-            element={<PromotionalTips />}
-          />
-          <Route
-            path="/settings/change-password"
-            element={<ChangePasswordSettings />}
-          />
-          <Route path="/track-rider" element={<TrackRider />} />
-          <Route path="/wallet" element={<Wallet />} />
-          <Route path="/send-package" element={<SendPackage />} />
-          <Route
-            path="/receiver-information"
-            element={<ReceiverInformation />}
-          />
-          <Route path="/sender-information" element={<SenderInformation />} />
-          <Route path="/payment-processing" element={<PaymentProcessing />} />
+      {/* <Route element={<PersistLogin allowedRole={["user"]} />}> */}
+      {/* <Route element={<RequireUser allowedRole={["user"]} />}> */}
+      <Route path="/users-dashboard" element={<UsersDashboard />} />
+      <Route path="/settings/edit-profile" element={<EditProfile />} />
+      <Route path="/settings/promotional-tips" element={<PromotionalTips />} />
+      <Route
+        path="/settings/change-password"
+        element={<ChangePasswordSettings />}
+      />
+      <Route path="/track-rider" element={<TrackRider />} />
+      <Route path="/wallet" element={<Wallet />} />
+      <Route path="/send-package" element={<SendPackage />} />
+      <Route path="/receiver-information" element={<ReceiverInformation />} />
+      <Route path="/sender-information" element={<SenderInformation />} />
+      <Route path="/payment-processing" element={<PaymentProcessing />} />
 
-          <Route path="/promotional-ads" element={<Promotional />} />
-          <Route path="/notification" element={<Notification />} />
-        </Route>
-      </Route>
+      <Route path="/promotional-ads" element={<Promotional />} />
+      <Route path="/notification" element={<Notification />} />
+      {/* </Route> */}
+      {/* </Route> */}
 
       {/**Admin routes */}
-      <Route element={<PersistLogin allowedRole={["admin", "superAdmin"]} />}>
-        <Route element={<RequireAdmin allowedRole={["admin", "superAdmin"]} />}>
-          <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        </Route>
-      </Route>
+      {/* <Route element={<PersistLogin allowedRole={["superAdmin"]} />}> */}
+      {/* <Route element={<RequireAdmin allowedRole={["superAdmin"]} />}> */}
+      <Route path="/admin-dashboard" element={<AdminDashboard />} />
+      {/* </Route> */}
+      {/* </Route> */}
 
       {/* <Route path="/settings" element={<Settings />} /> */}
 

@@ -59,10 +59,10 @@ const AdminRegistration = () => {
 
         setLoading(false); // Reset loading after successful submission
 
-        if (response.data && response.data.data) {
-          const userId = response.data.data;
+        if (response.data && response.data.admin._id) {
+          const _id = response.data.admin._id;
           // Store the `userId` in localStorage
-          localStorage.setItem("userId", userId);
+          localStorage.setItem("adminId", _id);
         }
 
         // console.log(response.data);
@@ -70,8 +70,7 @@ const AdminRegistration = () => {
         Swal.fire({
           toast: true,
           icon: "success",
-          title:
-            "Registration Successful! A verification link has been sent to your email.",
+          title: "Registration Successful! Kindly Login With Your Details.",
           position: "top",
           timer: 3000,
           showConfirmButton: false,

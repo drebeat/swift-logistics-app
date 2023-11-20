@@ -17,10 +17,6 @@ const AdminHeader = () => {
       className="sticky top-0 w-full flex items-center justify-around h-16 px-8 py-3 bg-fuchsia-950 shadow z-40"
       style={{ fontFamily: "Schibsted Grotesk, sans-serif" }}
     >
-      <div className="">
-        <GiHamburgerMenu size={24} className="text-white" />
-      </div>
-
       <form className="relative sm:w-1/2 w-2/5 flex items-center">
         <input
           type="search"
