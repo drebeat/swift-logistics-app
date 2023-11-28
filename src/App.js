@@ -39,6 +39,7 @@ import PromotionalTips from "./pages/Users/PromotionalTips";
 import ChangePasswordSettings from "./pages/Users/ChangePasswordSettings";
 import Notification from "./pages/Users/Notification";
 import SenderInformation from "./pages/Users/SenderInformation";
+import PersistAdminLogin from "./components/PersistAdminLogin";
 
 function App() {
   return (
@@ -86,7 +87,7 @@ function App() {
       </Route>
 
       {/**Admin routes */}
-      <Route element={<PersistLogin allowedRole={["superAdmin"]} />}>
+      <Route element={<PersistAdminLogin allowedRole={["superAdmin"]} />}>
         <Route element={<RequireAdmin allowedRole={["superAdmin"]} />}>
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
         </Route>

@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 
 import useAuth from "../hooks/useAuth";
 import Loading from "./Loading";
-import useRefreshToken from "../hooks/useRefreshToken";
+import useAdminRefreshToken from "../hooks/useAdminRefreshToken";
 
-const PersistLogin = ({ allowedRole }) => {
+const PersistAdminLogin = ({ allowedRole }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const refresh = useRefreshToken(allowedRole);
+  const refresh = useAdminRefreshToken(allowedRole);
   const context = useAuth();
 
   useEffect(() => {
@@ -41,4 +41,4 @@ const PersistLogin = ({ allowedRole }) => {
   );
 };
 
-export default PersistLogin;
+export default PersistAdminLogin;
